@@ -1,0 +1,30 @@
+/* ====== CUSTOM TOAST ====== */
+.my-toast {
+  background: rgba(0, 0, 0, 0.6) !important; /* nền mờ */
+  backdrop-filter: blur(6px); /* blur nền */
+  color: white !important; /* chữ trắng */
+  font-size: 1.25rem !important; /* chữ to */
+  font-weight: bold;
+  padding: 80px 10px !important; /* padding lớn */
+  border-radius: 12px !important;
+  white-space: nowrap; /* chữ không xuống dòng */
+  display: inline-flex; /* cho nội dung nằm 1 hàng */
+  align-items: center; /* căn giữa theo chiều dọc */
+  justify-content: center; /* căn giữa theo chiều ngang */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* bóng nhẹ */
+}
+
+/* ====== TOAST BODY ====== */
+.my-toast-body {
+  margin: 0;
+}
+
+/* ====== ĐẶT TOAST CHÍNH GIỮA MÀN HÌNH ====== */
+.Toastify__toast-container--top-center {
+  top: 40% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%);
+  width: fit-content; /* vừa với nội dung */
+  max-width: 90vw; /* tránh quá rộng trên mobile */
+  pointer-events: none; /* tránh chặn click ngoài toast */
+}
