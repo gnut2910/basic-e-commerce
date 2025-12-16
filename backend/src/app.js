@@ -20,7 +20,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://electronics-tung-minh.onrender.com",
+    origin: "https://basic-e-commerce-lk1b.onrender.com",
     credentials: true,
   })
 );
