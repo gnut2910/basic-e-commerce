@@ -1,10 +1,15 @@
 // controllers/payment.controller.js
-import { createZaloPayPayment, handleZaloPayResult } from "../services/payment.service.js";
+import {
+  createZaloPayPayment,
+  handleZaloPayResult,
+} from "../services/payment.service.js";
 
 // FE track page
-const FRONTEND_TRACK_URL = "http://localhost:5173/track-order";
+const FRONTEND_TRACK_URL =
+  "https://basic-e-commerce-nine.vercel.app/track-order";
 // BE redirect endpoint
-const REDIRECT_URL = "http://localhost:3000/payment/zalopay-result";
+const REDIRECT_URL =
+  "https://basic-e-commerce-lk1b.onrender.com/payment/zalopay-result";
 
 export const createZaloPayPaymentController = async (req, res) => {
   try {
@@ -28,7 +33,10 @@ export const createZaloPayPaymentController = async (req, res) => {
 export const zaloPayResultController = async (req, res) => {
   const { apptransid, status } = req.query;
 
-  const { orderId, paymentResult } = await handleZaloPayResult({ apptransid, status });
+  const { orderId, paymentResult } = await handleZaloPayResult({
+    apptransid,
+    status,
+  });
 
   // redirect về FE (chỉ 2 trạng thái cuối)
   let redirectUrl = FRONTEND_TRACK_URL;
