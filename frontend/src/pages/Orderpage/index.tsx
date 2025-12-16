@@ -318,6 +318,7 @@ const OrderPage: React.FC = () => {
   const handleConfirmOrder = async () => {
     setShowConfirm(false);
     await placeOrder();
+    navigate("/track-order");
   };
 
   const handleCancelOrder = () => {
